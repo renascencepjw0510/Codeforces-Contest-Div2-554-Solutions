@@ -17,11 +17,11 @@ Find the maximum number of chests Neko can open.
 
 ### Input
 
-The first line contains integers 𝑛 and 𝑚 (1≤𝑛,𝑚≤105) — the number of chests and the number of keys.
+The first line contains integers 𝑛 and 𝑚 (1≤𝑛,𝑚≤10<sup>5</sup>) — the number of chests and the number of keys.
 
-The second line contains 𝑛 integers 𝑎1,𝑎2,…,𝑎𝑛 (1≤𝑎𝑖≤109) — the numbers written on the treasure chests.
+The second line contains 𝑛 integers 𝑎1,𝑎2,…,𝑎𝑛 (1≤𝑎𝑖≤10<sup>9</sup>) — the numbers written on the treasure chests.
 
-The third line contains 𝑚 integers 𝑏1,𝑏2,…,𝑏𝑚 (1≤𝑏𝑖≤109) — the numbers written on the keys.
+The third line contains 𝑚 integers 𝑏1,𝑏2,…,𝑏𝑚 (1≤𝑏𝑖≤10<sup>9</sup>) — the numbers written on the keys.
 
 ### Output
 
