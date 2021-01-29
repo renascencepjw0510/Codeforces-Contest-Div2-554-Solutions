@@ -13,10 +13,12 @@ Neko has two integers 𝑎 and 𝑏. His goal is to find a non-negative integer 
 
 Given his mathematical talent, Neko had no trouble getting Wrong Answer on this problem. Can you help him solve it?
 
-Input
+### Input
+
 The only line contains two integers 𝑎 and 𝑏 (1≤𝑎,𝑏≤10<sup>9</sup>).
 
-Output
+### Output
+
 Print the smallest non-negative integer 𝑘 (𝑘≥0) such that the lowest common multiple of 𝑎+𝑘 and 𝑏+𝑘 is the smallest possible.
 
 If there are many possible integers 𝑘 giving the same value of the least common multiple, print the smallest one.
