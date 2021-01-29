@@ -39,61 +39,77 @@ If there are multiple possible answers, you can print any of them. It is possibl
 input1:
 
 ```text
+39
 ```
 
 output1:
 
 ```text
+4
+5 3 
 ```
 
 input2:
 
 ```text
+1
 ```
 
 output2:
 
 ```text
+0
 ```
 
 input3:
 
 ```text
+7
 ```
 
 output3:
 
 ```text
+0
 ```
 
 ### Note
 
-In the first example, one possible way to unlock 3 chests is as follows:
+In the first test, one of the transforms might be as follows: 39→56→57→62→63. Or more precisely:
 
-- Use first key to unlock the fifth chest,
-- Use third key to unlock the second chest,
-- Use fourth key to unlock the first chest.
+1. Pick 𝑛=5. 𝑥 is transformed into 39⊕31, or 56.
+2. Increase 𝑥 by 1, changing its value to 57.
+3. Pick 𝑛=3. 𝑥 is transformed into 57⊕7, or 62.
+4. Increase 𝑥 by 1, changing its value to 63=2<sup>6</sup>−1.
 
-In the second example, you can use the only key to unlock any single chest (note that one key can't be used twice).
+In the second and third test, the number already satisfies the goal requirement.
 
-In the third example, no key can unlock the given chest.
 
 ## Solution
 
 // To be updated
 
-[Source Code](/Problem-A/a.cpp)
+[Source Code](/Problem-B/b.cpp)
 
 ```cpp
 #include<bits/stdc++.h>
 typedef long long ll;
+
 int main() {
-    int n,m,x;
-    scanf("%d%d",&n,&m);
-    int cnta[2]= {0},cntb[2]= {0};
-    for(int i=1; i<=n; ++i)scanf("%d",&x),++cnta[x&1];
-    for(int i=1; i<=m; ++i)scanf("%d",&x),++cntb[x&1];
-    printf("%d\n",std::min(cnta[0],cntb[1])+std::min(cnta[1],cntb[0]));
+    int x;
+    scanf("%d",&x);
+    std::vector<int> ans;
+    if(!(x&1)) ans.push_back(0),++x;
+    int mx=19;
+    for(int i=19; ~i; i--) if(x>>i&1) {
+            mx=i;
+            break;
+        }
+    for(int i=mx; ~i; i--) {
+        if(!(x>>i&1)) ans.push_back(i+1),x^=(1<<i+1)-1,++x;
+    }
+    printf("%d\n",ans.size()<<1);
+    for(auto x:ans) printf("%d ",x);
     return 0;
 }
 ```
